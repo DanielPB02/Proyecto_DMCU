@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
-
 import java.util.ArrayList
 import java.util.Locale
 
@@ -17,6 +17,7 @@ class ListViewAdapter(
     ) : BaseAdapter() {
     internal var inflater: LayoutInflater
     private val arraylist: ArrayList<Plants>
+    val ctx: Context? = mContext
 
     init {
         inflater = LayoutInflater.from(mContext)
@@ -26,6 +27,7 @@ class ListViewAdapter(
 
     inner class ViewHolder {
         internal var name: TextView? = null
+        internal var img: ImageView? = null
     }
 
     override fun getCount(): Int {
@@ -40,6 +42,10 @@ class ListViewAdapter(
         return position.toLong()
     }
 
+    fun getImageId(position: Int): String {
+        return SearchFragment.PlantsArrayList[position].getPlantName().toLowerCase()
+    }
+
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {
         var view = view
         val holder: ViewHolder
@@ -48,11 +54,14 @@ class ListViewAdapter(
             view = inflater.inflate(R.layout.listview_item, null)
             // Locate the TextViews in listview_item.xml
             holder.name = view!!.findViewById(R.id.nombrePlanta) as TextView
+            holder.img = view!!.findViewById(R.id.fotoPlanta) as ImageView
             view.tag = holder
         } else {
             holder = view.tag as ViewHolder
         }
         // Set the results into TextViews
+        val draw = ctx!!.getResources().getIdentifier(getImageId(position), "drawable", ctx!!.getPackageName());
+        holder.img!!.setImageResource(draw)
         holder.name!!.setText(SearchFragment.PlantsArrayList[position].getPlantName())
         return view
     }

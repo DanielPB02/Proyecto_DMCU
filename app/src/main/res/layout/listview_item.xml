@@ -21,7 +21,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_weight="1"
-        android:src="@drawable/girasol" />
+        />
 
     <TextView
         android:id="@+id/nombrePlanta"
@@ -40,9 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nombrePlanta"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="-13dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="-3dp"
         android:layout_toEndOf="@+id/fotoPlanta"
         android:layout_toRightOf="@+id/fotoPlanta"
         android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit rutrum primis vehicula sed class cum, viverra."

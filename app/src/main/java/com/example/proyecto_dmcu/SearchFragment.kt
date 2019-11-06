@@ -1,6 +1,7 @@
 package com.example.proyecto_dmcu
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -9,9 +10,6 @@ import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import java.util.ArrayList
-import android.app.Activity
-import android.content.Context
-
 
 
 
@@ -26,16 +24,6 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
     private var adapter: ListViewAdapter? = null
     private var editsearch: SearchView? = null
     private var plantList: Array<String>? = null
-    private var contexto: Context? = null
-
-
-
-    override fun onAttach(contexto: Context) {
-        super.onAttach(contexto)
-        if (contexto is Activity) {//Name of your activity
-            this.contexto = contexto
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,17 +37,14 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         // Generate sample data
 
         plantList = arrayOf(
-            "Xmen",
-            "Titanic",
-            "Captain America",
-            "Iron man",
-            "Rocky",
-            "Transporter",
-            "Lord of the rings",
-            "The jungle book",
-            "Tarzan",
-            "Cars",
-            "Shrek"
+            "Sunflower",
+            "Dandelion",
+            "Rose",
+            "Daisy",
+            "Lily",
+            "Tulip",
+            "Delphinium",
+            "Gardenia"
         )
 
         // Locate the ListView in listview_main.xml
@@ -68,9 +53,9 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         PlantsArrayList = ArrayList()
 
         for (i in plantList!!.indices) {
-            val movieNames = Plants(plantList!![i])
+            val plantnames = Plants(plantList!![i])
             // Binds all strings into an array
-            PlantsArrayList.add(movieNames)
+            PlantsArrayList.add(plantnames)
         }
 
         // Pass results to ListViewAdapter Class
@@ -82,12 +67,20 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         // Locate the EditText in listview_main.xml
         editsearch = viewSearch.findViewById(R.id.search) as SearchView
         editsearch!!.setOnQueryTextListener(this)
+
         list!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            /*
             Toast.makeText(
                 getActivity(),
                 PlantsArrayList[position].getPlantName(),
                 Toast.LENGTH_SHORT
             ).show()
+    */
+            val nameP = PlantsArrayList[position].getPlantName();
+            val intent = Intent(this.activity, PlantDetailsActivity::class.java)
+            intent.putExtra("Name", nameP)
+            startActivity(intent)
+
         }
         return viewSearch
     }
