@@ -2,23 +2,109 @@ package com.example.proyecto_dmcu
 
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.SearchView
+import android.widget.AdapterView
+import android.widget.ListView
+import android.widget.Toast
+import java.util.ArrayList
+import android.app.Activity
+import android.content.Context
+
+
+
 
 /**
  * A simple [Fragment] subclass.
  */
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
+
+    lateinit var viewSearch: View
+    lateinit var search: SearchView
+    private var list: ListView? = null
+    private var adapter: ListViewAdapter? = null
+    private var editsearch: SearchView? = null
+    private var plantList: Array<String>? = null
+    private var contexto: Context? = null
+
+
+
+    override fun onAttach(contexto: Context) {
+        super.onAttach(contexto)
+        if (contexto is Activity) {//Name of your activity
+            this.contexto = contexto
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+
+        viewSearch = inflater.inflate(R.layout.fragment_search, container, false)
+        search = viewSearch.findViewById(R.id.search)
+
+        // Generate sample data
+
+        plantList = arrayOf(
+            "Xmen",
+            "Titanic",
+            "Captain America",
+            "Iron man",
+            "Rocky",
+            "Transporter",
+            "Lord of the rings",
+            "The jungle book",
+            "Tarzan",
+            "Cars",
+            "Shrek"
+        )
+
+        // Locate the ListView in listview_main.xml
+        list = viewSearch.findViewById(R.id.listview) as ListView
+
+        PlantsArrayList = ArrayList()
+
+        for (i in plantList!!.indices) {
+            val movieNames = Plants(plantList!![i])
+            // Binds all strings into an array
+            PlantsArrayList.add(movieNames)
+        }
+
+        // Pass results to ListViewAdapter Class
+        adapter = ListViewAdapter(getActivity())
+
+        // Binds the Adapter to the ListView
+        list!!.adapter = adapter
+
+        // Locate the EditText in listview_main.xml
+        editsearch = viewSearch.findViewById(R.id.search) as SearchView
+        editsearch!!.setOnQueryTextListener(this)
+        list!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            Toast.makeText(
+                getActivity(),
+                PlantsArrayList[position].getPlantName(),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        return viewSearch
     }
 
+    override fun onQueryTextSubmit(query: String): Boolean {
 
-}
+        return false
+    }
+
+    override fun onQueryTextChange(newText: String): Boolean {
+        adapter!!.filter(newText)
+        return false
+    }
+
+    companion object {
+        var PlantsArrayList = ArrayList<Plants>()
+    }
+
+    }
+
