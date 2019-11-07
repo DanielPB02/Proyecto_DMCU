@@ -58,7 +58,8 @@
         android:id="@+id/cuidados"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/ic_cuidados"/>
+        android:src="@drawable/ic_cuidados"
+        android:background="@drawable/circlebutton"/>
 
     <ImageButton
         android:id="@+id/info"
@@ -67,6 +68,7 @@
         android:layout_alignLeft="@id/cuidados"
         android:layout_marginLeft="55dp"
         android:layout_toRightOf="@id/cuidados"
-        android:background="@drawable/ic_informacion" />
+        android:src="@drawable/ic_informacion"
+        android:background="@drawable/circlebutton"/>
     </LinearLayout>
 </RelativeLayout>
