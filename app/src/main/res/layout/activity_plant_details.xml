@@ -17,7 +17,7 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="171dp"
         tools:layout_editor_absoluteY="34dp"
-        tools:text="Planta:" />
+        tools:text="Planta:"/>
 
     <ImageView
         android:id="@+id/imgPlant"
@@ -25,7 +25,8 @@
         android:layout_width="200dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/daisy"/>
     <TextView
         android:id="@+id/namePlant"
         android:layout_width="wrap_content"
@@ -57,7 +58,7 @@
         android:id="@+id/cuidados"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/delphinium"/>
+        android:background="@drawable/ic_cuidados"/>
 
     <ImageButton
         android:id="@+id/info"
@@ -66,6 +67,6 @@
         android:layout_alignLeft="@id/cuidados"
         android:layout_marginLeft="55dp"
         android:layout_toRightOf="@id/cuidados"
-        android:background="@drawable/lily" />
+        android:background="@drawable/ic_informacion" />
     </LinearLayout>
 </RelativeLayout>

@@ -80,7 +80,6 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
             val intent = Intent(this.activity, PlantDetailsActivity::class.java)
             intent.putExtra("Name", nameP)
             startActivity(intent)
-
         }
         return viewSearch
     }

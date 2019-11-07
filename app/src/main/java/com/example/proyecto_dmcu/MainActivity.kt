@@ -1,5 +1,6 @@
 package com.example.proyecto_dmcu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -34,15 +35,15 @@ class MainActivity : AppCompatActivity() {
         b_signin.setOnClickListener {
             showSignin()
         }
-
     }
 
     private fun login() {
-        setContentView(R.layout.welcome)
+        //setContentView(R.layout.fragment_home)
+        val intent = Intent(this, MenuActivity::class.java)
+        startActivity(intent)
         b_signin.setOnClickListener {
             showSignin()
         }
-
     }
 
 }
