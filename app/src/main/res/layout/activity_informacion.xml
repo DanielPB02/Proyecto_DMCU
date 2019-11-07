@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CuidadosActivity">
+
+    <ImageView
+        android:id="@+id/imgplantI"
+        android:layout_width="222dp"
+        android:layout_height="133dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bookplant" />
+
+    <TextView
+        android:id="@+id/dsctitleI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgplantI"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Información"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/inf1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dsctitleI"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Nombre cientifico: Gardenia jasminoides."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Nombre común o vulgar: Gardenia, Jazmín del Cabo."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Familia: Rubiaceae."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf3"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Origen: originaria de regiones tropicales y subtropicales de Asia, Africa y Oceanía."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf4"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Arbusto perenne que puede alcanzar una altura de 2 metros."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf5"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Hojas ovales o lanceoladas, opuestas, de color verde oscuro y brillantes."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf6"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Flores muy fragantes de color blanco-cremoso."
+        android:textColor="@color/coloSecundarioTexto" />
+
+    <TextView
+        android:id="@+id/inf8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inf7"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:text="Flores blancas, solitarias, simples o dobles."
+        android:textColor="@color/coloSecundarioTexto" />
+
+
+</RelativeLayout>

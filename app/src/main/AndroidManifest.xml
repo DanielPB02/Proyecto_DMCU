@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CuidadosActivity"></activity>
+        <activity android:name=".VerTutorialesActivity"></activity>
+        <activity android:name=".InformacionActivity" />
+        <activity android:name=".CuidadosActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".PlantDetailsActivity" />
         <activity android:name=".MainActivity">

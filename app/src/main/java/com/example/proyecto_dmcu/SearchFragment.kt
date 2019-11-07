@@ -24,6 +24,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
     private var adapter: ListViewAdapter? = null
     private var editsearch: SearchView? = null
     private var plantList: Array<String>? = null
+    private var plantCientific: Array<String>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +37,8 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
 
         // Generate sample data
 
+
+
         plantList = arrayOf(
             "Sunflower",
             "Dandelion",
@@ -46,6 +49,16 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
             "Delphinium",
             "Gardenia"
         )
+        plantCientific = arrayOf(
+            "Helianthus annuus",
+            "Taraxacum officinale",
+            "Rosa spp",
+            "Bellis perennis",
+            "Lilium",
+            "Tulipa spp",
+            "Delphinium nuttallianum",
+            "Gardenia jasminoides"
+        )
 
         // Locate the ListView in listview_main.xml
         list = viewSearch.findViewById(R.id.listview) as ListView
@@ -53,7 +66,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         PlantsArrayList = ArrayList()
 
         for (i in plantList!!.indices) {
-            val plantnames = Plants(plantList!![i])
+            val plantnames = Plants(plantList!![i],plantCientific!![i])
             // Binds all strings into an array
             PlantsArrayList.add(plantnames)
         }
@@ -77,8 +90,10 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
             ).show()
     */
             val nameP = PlantsArrayList[position].getPlantName();
+            val nameC = PlantsArrayList[position].getScientificName();
             val intent = Intent(this.activity, PlantDetailsActivity::class.java)
             intent.putExtra("Name", nameP)
+            intent.putExtra("scientific",nameC)
             startActivity(intent)
         }
         return viewSearch

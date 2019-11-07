@@ -2,11 +2,16 @@ package com.example.proyecto_dmcu
 
 class Plants {
     private val plantName: String
-    constructor(plantName: String){
+    private val scientificName: String
+    constructor(plantName: String, scientificName: String){
         this.plantName = plantName
+        this.scientificName = scientificName
     }
     fun getPlantName() : String{
         return this.plantName
+    }
+    fun getScientificName(): String{
+        return this.scientificName
     }
     /*
     private val family: String
