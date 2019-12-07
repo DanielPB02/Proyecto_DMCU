@@ -1,44 +1,34 @@
 package com.example.proyecto_dmcu
 
+import androidx.annotation.IntegerRes
+
 class Plants {
     private val plantName: String
     private val scientificName: String
-    constructor(plantName: String, scientificName: String){
+    private val iluminacion: Int
+    private val riego: Int
+
+    constructor(plantName: String, scientificName: String, iluminacion: Int, riego: Int) {
         this.plantName = plantName
         this.scientificName = scientificName
+        this.iluminacion = iluminacion
+        this.riego = riego
     }
-    fun getPlantName() : String{
+
+    fun getPlantName(): String {
         return this.plantName
     }
-    fun getScientificName(): String{
+
+    fun getScientificName(): String {
         return this.scientificName
     }
-    /*
-    private val family: String
-    private val species: String
-    private val cientificName: String
 
-    constructor(plantName: String, family: String, species: String, cientificName: String){
-        this.plantName = plantName
-        this.family = family
-        this.species = species
-        this. cientificName = cientificName
+    fun getIluminacion(): Int {
+        return this.iluminacion
     }
 
-    fun getPlantName(): String{
-        return this.plantName
+    fun getRiego(): Int {
+        return this.riego
     }
 
-    fun getFamily(): String{
-        return this.plantName
-    }
-
-    fun getSpecies(): String{
-        return this.species
-    }
-
-    fun getCientificName(): String{
-        return this.cientificName
-    }
-     */
 }

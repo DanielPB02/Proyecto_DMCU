@@ -25,6 +25,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSignin() {
         setContentView(R.layout.signin_screen)
+        b_accSignin.setOnClickListener{
+            showLogin()
+        }
         b_haveAcc.setOnClickListener {
             showLogin()
         }
@@ -32,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showLogin() {
         setContentView(R.layout.login_screen)
+        b_accept.setOnClickListener{
+            login()
+        }
         b_signin.setOnClickListener {
             showSignin()
         }

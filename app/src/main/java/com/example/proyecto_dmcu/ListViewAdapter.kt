@@ -43,7 +43,9 @@ class ListViewAdapter(
     }
 
     fun getImageId(position: Int): String {
-        return SearchFragment.PlantsArrayList[position].getPlantName().toLowerCase()
+        val name = SearchFragment.PlantsArrayList[position].getPlantName().toLowerCase()
+        val nombre = name.replace("é","e")
+        return nombre.replace(" " , "")
     }
 
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {

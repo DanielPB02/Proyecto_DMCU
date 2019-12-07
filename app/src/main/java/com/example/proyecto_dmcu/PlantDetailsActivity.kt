@@ -3,10 +3,11 @@ package com.example.proyecto_dmcu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.MotionEvent
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.ImageView
-import android.view.Window
 import androidx.appcompat.app.ActionBar
 
 
@@ -24,15 +25,21 @@ class PlantDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_details)
+        setTitle("Detalles")
+        //add back button
+        getSupportActionBar()!!.setDisplayShowHomeEnabled(true)
+        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
 
         //get Data from Search
-
         var intent = intent
         nameP = intent.getStringExtra("Name")
         nameC = intent.getStringExtra("scientific")
-        //imageview = findViewById(R.id.imgPlant)
-        //val draw = this.resources.getIdentifier(nameP,"drawable",this.packageName)
-        //imageview!!.setImageResource(draw)
+        val iluminacion = intent.getIntExtra("iluminacion",1)
+        val riego = intent.getIntExtra("riego",2)
+        imageview = findViewById(R.id.imgPlant)
+        val nombreImg = getImageId(nameP)
+        val draw = this.resources.getIdentifier(nombreImg,"drawable",this.packageName)
+        imageview!!.setImageResource(draw)
         txtview = findViewById(R.id.namePlant)
         txtviewdesc = findViewById(R.id.descPlant)
         txtview!!.setText(nameP)
@@ -41,15 +48,34 @@ class PlantDetailsActivity : AppCompatActivity() {
         btnC = findViewById(R.id.cuidados)
         btnI = findViewById(R.id.info)
 
-        btnC!!.setOnClickListener(){
+        btnC!!.setOnClickListener() {
             val intent = Intent(this, CuidadosActivity::class.java)
+            intent.putExtra("nombre",nameP)
             startActivity(intent)
         }
-        btnI!!.setOnClickListener(){
+        btnI!!.setOnClickListener() {
             val intent = Intent(this, InformacionActivity::class.java)
+            intent.putExtra("nombrecomun", nameP)
+            intent.putExtra("nombrecientifico",nameC)
+            intent.putExtra("iluminacion", iluminacion)
+            intent.putExtra("riego", riego)
             startActivity(intent)
         }
-
     }
 
+    fun getImageId(namePlant: String?): String {
+        val name = namePlant!!.toLowerCase()
+        val nombre = name.replace("é","e")
+        return nombre.replace(" " , "")
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.getItemId()
+
+        if (id == android.R.id.home) {
+            this.finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+}

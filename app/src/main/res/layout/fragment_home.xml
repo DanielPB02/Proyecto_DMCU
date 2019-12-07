@@ -5,13 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="¡Bienvenido a PlantFriends!"
-        android:textColor="#40800B"
+        android:textColor="@color/colorPrimario"
         android:textSize="40sp"
         android:textStyle="bold|italic" />
 

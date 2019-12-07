@@ -35,6 +35,7 @@ class MenuActivity : AppCompatActivity() {
                         .replace(R.id.frame_layout, homeFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
+                    setTitle("PlantFriends")
                 }
                 R.id.tutorials -> {
 
@@ -44,6 +45,7 @@ class MenuActivity : AppCompatActivity() {
                         .replace(R.id.frame_layout, tutorialsFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
+                    setTitle("Técnicas")
                 }
                 R.id.search -> {
 
@@ -53,6 +55,7 @@ class MenuActivity : AppCompatActivity() {
                         .replace(R.id.frame_layout, searchFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
+                    setTitle("Buscar plantas")
                 }
             }
             true

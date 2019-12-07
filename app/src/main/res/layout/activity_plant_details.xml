@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:textColor="#4FA882"
+        android:textColor="@color/colorSecundarioA"
         android:textSize="30sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="171dp"
@@ -26,7 +26,7 @@
         android:layout_marginTop="20dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/daisy"/>
+        android:background="@drawable/sietecolores"/>
     <TextView
         android:id="@+id/namePlant"
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:textSize="40sp"
-        android:textColor="#40800B"
+        android:textColor="@color/colorPrimario"
         android:text="Daisy"/>
     <TextView
         android:id="@+id/descPlant"
@@ -45,7 +45,7 @@
         android:layout_below="@+id/namePlant"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
-        android:textColor="#5CA122"
+        android:textColor="@color/colorCuerpo"
         android:text="Caesalpinia caladenia"/>
 
     <LinearLayout

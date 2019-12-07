@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Proyecto_DMCU</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="Home">Feed</string>
-    <string name="Search">Busqueda</string>
-    <string name="Tutorials">Tutoriales</string>
+    <string name="Home">Inicio</string>
+    <string name="Tutorials">Técnicas</string>
+    <string name="Search">Búsqueda</string>
 </resources>

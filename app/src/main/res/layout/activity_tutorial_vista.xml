@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TutorialVistaActivity">
+
+    <TextView
+        android:id="@+id/tit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="Instrucciones"
+        android:textColor="@color/colorSecundarioA"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tit"
+        android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit ac luctus elementum, integer phasellus habitasse tellus augue iaculis ullamcorper dignissim varius in penatibus, risus ut morbi sollicitudin eleifend lobortis dis pharetra pretium. Neque tincidunt tempor nam aliquam viverra sem quisque varius in, consequat nostra magnis etiam turpis suspendisse morbi dui ultrices eget, congue curae nulla libero metus nisl augue cursus. Fusce magnis luctus nec at conubia feugiat ut tortor, praesent tempus sagittis convallis pharetra parturient pulvinar, leo sapien torquent eleifend ridiculus sem laoreet."
+        android:textColor="@color/colorCuerpo" />
+
+</RelativeLayout>

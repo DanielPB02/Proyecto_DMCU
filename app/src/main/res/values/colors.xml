@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#447E31</color>
-    <color name="colorPrimaryDark">#1D6D5D</color>
+    <color name="colorPrimary">#327223</color>
+    <color name="colorPrimaryDark">#1A564E</color>
     <color name="colorAccent">#A22C3C</color>
-    <color name="colorSecundario">#82A12B</color>
-    <color name="coloSecundarioTexto">#5CA122</color>
+    <color name="colorSecundario">#678128</color>
+    <color name="coloSecundarioTexto">#FFFFFF</color>
     <color name="colorPrimarioTexto">#FFFFFF</color>
+
+    <!--Colores primarios-->
+    <color name="colorPrimario">#327223</color>
+    <color name="colorPrimarioSombra">#1A530E</color>
+    <color name="colorCuerpo">#4A8C3C</color>
+
+    <!--Colores secundarios verdes-->
+    <color name="colorSecundarioV">#678128</color>
+    <color name="colorTextoSecundarioV">#293A00</color>
+    <color name="colorSecundarioVSombra">#475D0F</color>
+
+    <!--Colores secundarios azules-->
+    <color name="colorSecundarioA">#1A564E</color>
+    <color name="colorSecundarioASombra">#0A3E37</color>
+
+    <!--Colores complementarios-->
+    <color name="colorComplementario">#A22C3C</color>
+    <color name="colorTextoComplementario">#3B0006</color>
+
+    <!--Color texto basico-->
+    <color name="colorTextoBasico">#FFFFFF</color>
+
+
+
+
+
+
+
 </resources>

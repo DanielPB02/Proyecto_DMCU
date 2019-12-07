@@ -25,6 +25,8 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
     private var editsearch: SearchView? = null
     private var plantList: Array<String>? = null
     private var plantCientific: Array<String>? = null
+    private var plantIlum: Array<Int>? = null
+    private var plantRiego: Array<Int>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,24 +42,24 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
 
 
         plantList = arrayOf(
-            "Sunflower",
-            "Dandelion",
-            "Rose",
-            "Daisy",
-            "Lily",
-            "Tulip",
-            "Delphinium",
-            "Gardenia"
+            "Siete Colores",
+            "Orégano",
+            "Albahaca"
         )
         plantCientific = arrayOf(
-            "Helianthus annuus",
-            "Taraxacum officinale",
-            "Rosa spp",
-            "Bellis perennis",
-            "Lilium",
-            "Tulipa spp",
-            "Delphinium nuttallianum",
-            "Gardenia jasminoides"
+            "Lantana camara",
+            "Lippia graveolens",
+            "Ocimum campechianum"
+        )
+        plantIlum = arrayOf(
+            2,
+            2,
+            1
+        )
+        plantRiego = arrayOf(
+            2,
+            1,
+            3
         )
 
         // Locate the ListView in listview_main.xml
@@ -66,9 +68,9 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         PlantsArrayList = ArrayList()
 
         for (i in plantList!!.indices) {
-            val plantnames = Plants(plantList!![i],plantCientific!![i])
+            val plantitas = Plants(plantList!![i],plantCientific!![i],plantIlum!![i],plantRiego!![i])
             // Binds all strings into an array
-            PlantsArrayList.add(plantnames)
+            PlantsArrayList.add(plantitas)
         }
 
         // Pass results to ListViewAdapter Class
@@ -82,18 +84,16 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
         editsearch!!.setOnQueryTextListener(this)
 
         list!!.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            /*
-            Toast.makeText(
-                getActivity(),
-                PlantsArrayList[position].getPlantName(),
-                Toast.LENGTH_SHORT
-            ).show()
-    */
-            val nameP = PlantsArrayList[position].getPlantName();
-            val nameC = PlantsArrayList[position].getScientificName();
+            
+            val nameP = PlantsArrayList[position].getPlantName()
+            val nameC = PlantsArrayList[position].getScientificName()
+            val ilum = PlantsArrayList[position].getIluminacion()
+            val riego = PlantsArrayList[position].getRiego()
             val intent = Intent(this.activity, PlantDetailsActivity::class.java)
             intent.putExtra("Name", nameP)
             intent.putExtra("scientific",nameC)
+            intent.putExtra("iluminacion",ilum)
+            intent.putExtra("riego",riego)
             startActivity(intent)
         }
         return viewSearch

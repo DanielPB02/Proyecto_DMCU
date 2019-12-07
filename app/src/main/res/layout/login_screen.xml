@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="121dp"
         android:text="INICIA SESIÓN"
-        android:textColor="#4CAF50" />
+        android:textColor="@color/colorPrimario" />
 
 
     <EditText
@@ -23,10 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tb_user"
-        android:layout_marginStart="84dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="6dp"
         android:ems="10"
+        android:hint="Contraseña"
         android:inputType="textPassword"
         tools:text="Usuario" />
 
@@ -35,10 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/l_login"
-        android:layout_marginStart="84dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="35dp"
         android:ems="10"
+        android:hint="Usuario"
         android:inputType="textPersonName"
         android:textColor="@android:color/darker_gray"
         tools:text="usuario" />
@@ -51,7 +53,7 @@
         android:layout_marginStart="160dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorSecundarioA"
         android:text="Aceptar"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/colorPrimarioTexto" />
@@ -63,7 +65,7 @@
         android:layout_marginStart="70dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="369dp"
-        android:background="@color/colorSecundario"
+        android:background="@color/colorSecundarioV"
         android:text="Crear cuenta de PlantFriends"
         android:textColor="@color/colorPrimarioTexto" />
 
